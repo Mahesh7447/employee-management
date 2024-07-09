@@ -1,0 +1,46 @@
+﻿@model IEnumerable<EmployeeManagement.Models.Employee>
+
+<html>
+    <head>
+    <title>Employee List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+    <body>
+    <div class="Container mt-5">
+        <h3 class="text-center text-primary">Employee List</h3>
+        <a asp-controller="Employee" asp-action="Create" class="btn btn-success">Create Employee</a>
+        <div class="row justify-content-center mt-2">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Mobile</th>
+                        <th>City</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </thead>
+                    <tbody>
+                        @foreach(var employee in Model){
+                           <tr>
+                                <td>@employee.FirstName</td>
+                                <td>@employee.LastName</td>
+                                <td>@employee.Gender</td>
+                                <td>@employee.Address</td>
+                                <td>@employee.Mobile</td>
+                                <td>@employee.City</td>
+                                <td>@employee.Department</td>
+                                <td>@employee.Status</td>
+                                <td><a asp-controller="Employee" asp-action="details" asp-route-id="@employee.EmpId" class="btn btn-primary">View</a></td>
+                           </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
