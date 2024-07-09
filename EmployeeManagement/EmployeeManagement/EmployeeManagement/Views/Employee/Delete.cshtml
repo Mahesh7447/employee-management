@@ -1,0 +1,32 @@
+﻿@model EmployeeManagement.Models.Employee
+<html>
+    <head></head>
+    <body>
+        <div class="container mt-3">
+            <div class="row justify-content-lg-center">
+                <h5 class="text-center text-danger mt-5">Are you sure want to Delete ?</h5>
+                <div class="col-md-4 mt-3">
+                    <div class="card" style="border:none">
+                        
+                            <table class="table" style="border:none">
+                                <tr>
+                                    <th>FirstName :</th>
+                                    <td>@Model.FirstName</td>
+                                </tr>
+                        <tr>
+                            <th>LastName :</th>
+                            <td>@Model.LastName</td>
+                        </tr>
+                        <tr>
+                            <th>Status :</th>
+                            <td>@Model.Status</td>
+                        </tr>
+                            </table>
+                        <a asp-controller="Employee" asp-action="DeleteConfirmed" asp-route-id=@Model.EmpId class="btn btn-danger">Remove</a>
+                    <a asp-controller="Employee" asp-action="Details" asp-route-id=@Model.EmpId class="btn btn-primary mt-2">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

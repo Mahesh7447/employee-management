@@ -1,0 +1,34 @@
+﻿
+@model EmployeeManagement.Models.Employee
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <h3 class="text-center mb-3 text-primary">Employee Details</h3>
+                <div class="col-md-4">
+                    <div class="card" style="border:none">
+                        <div classclass="row justify-content-center">
+                        <div class="card-body">
+                            <div class="card-text" style="font-size:18px;"><b>FirstName :</b> &nbsp;&nbsp;@Model.FirstName</div>
+                            <div class="card-text" style="font-size:18px;"><b>LastName :</b> &nbsp;&nbsp;@Model.LastName<div>
+                             <div class="card-text" style="font-size:18px;"><b>Gender :</b> &nbsp;&nbsp;@Model.Gender</div>
+                                    <div class="card-text " style="font-size:18px;"><b>Address :</b> &nbsp;&nbsp;@Model.Address</div>
+                                    <div class="card-text" style="font-size:18px;"><b>Mobile :</b> &nbsp;&nbsp;@Model.Mobile</div>
+                                    <div class="card-text" style="font-size:18px;"><b>City :</b> &nbsp;&nbsp;@Model.City</div>
+                                    <div class="card-text" style="font-size:18px;"><b>Department :</b> &nbsp;&nbsp;@Model.Department</div>
+                                    <div class="card-text" style="font-size:18px;"><b>Status :</b> &nbsp;&nbsp;@Model.Status</div>
+                            <br />
+                            <a type="submit" asp-controller="Employee" asp-action="Edit" asp-route-id="@Model.EmpId" class="btn btn-primary">Edit</a>
+                             <a type="submit" asp-controller="Employee" asp-action="Delete" asp-route-id="@Model.EmpId" class="btn btn-danger">Remove</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
